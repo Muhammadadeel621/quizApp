@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz app</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB1RByYQjIVG4JTII2EN1-s5HYf7AGiqx8",
+    authDomain: "quizzapp-cdadb.firebaseapp.com",
+    databaseURL: "https://quizzapp-cdadb.firebaseio.com",
+    projectId: "quizzapp-cdadb",
+    storageBucket: "quizzapp-cdadb.appspot.com",
+    messagingSenderId: "530919667671",
+    appId: "1:530919667671:web:bf1b3c1e22593e1fd77d92",
+    measurementId: "G-0FZGWPBJ4J"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+</head>
+<body style="background-color: blue;" id="body">
+
+  <div style="background-color: blue;display: flex;justify-content: center;align-items: center;height:70vh">
+    <div>
+   <div style="text-align: center;"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ2lz1oUR_BPM7GziM4ANrZKoJWLgPWOr82_A&usqp=CAU" alt="">
+</div><h1 style=color:white>CONGRATULATIONS YOU HAVE DONE ! </h1>
+<div style="display: flex;justify-content:center;color:white">
+<p id="print" style=> </p>
+<p id="print_score"></p>
+</div>
+</div>  </div>
+
+
+
+<script>
+  
+  let p=document.getElementById("print")
+firebase.database().ref("time").once("value",function(data){
+ p.innerHTML="you have take a time of " + data.val().min+"&nbsp"+data.val().sec
+})
+
+let sc=document.getElementById("print_score")
+firebase.database().ref("user_score").child("score").once("value",function(data){
+ sc.innerHTML="&nbsp"+"your score is "+ data.val()
+})
+</script>
+
+
+
+</body>
+<script src="app.js"></script>
+
+
+</html>

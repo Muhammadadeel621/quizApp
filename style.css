@@ -1,0 +1,16 @@
+.wrapper{height:100vh;}
+.name{display:block;border-bottom:2px solid white;border-radius: 50px 50px;}
+input{border:none;display: block; ;border-radius:none;background-color: blueviolet;font-size: 39px;color:white;
+    border-color: blueviolet;text-align:center}
+input:focus {
+    background-color:blueviolet;border:none;outline:none
+  }
+.btn_out{display: flex;justify-content: center;margin:10px;
+border:none;}
+.btn_quiz{border-radius: 50px;background-color: white;
+padding:25px;color:blue;border:none;width:200px}
+.btn_quiz:hover{transition: 0.8s all;background-color:yellow;color:black}
+optionsc{background-color: green;}
+.optionsc:hover{background-color:blueviolet;}
+.active{background-color: blueviolet;}
+#body{background-color: blueviolet;}
